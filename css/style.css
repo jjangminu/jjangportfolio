@@ -1,15 +1,12 @@
-* {
-  margin: 0px;
-  padding: 0px;
+/*basic font*/
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
-li {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: unset;
-}
-
+/*navi font*/
 @font-face {
   font-family: "HancomSans-Light";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomSans-Light.woff2")
@@ -25,11 +22,35 @@ a {
   font-weight: normal;
   font-style: normal;
 }
+/*강조 font*/
+@font-face {
+  font-family: "JalnanGothic";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/JalnanGothic.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+body {
+  font-family: "Pretendard-Regular";
+}
 
 @media (min-width: 1000px) {
   html,
   body {
     font-size: 16px;
+    background-color: rgb(23, 41, 34);
   }
 
   #intro {
@@ -41,6 +62,10 @@ a {
     background: url(../source/intro_bg.png) center no-repeat;
     background-size: cover;
     position: relative;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 999;
   }
   #intro h2 {
     position: absolute;
@@ -52,6 +77,9 @@ a {
     text-align: center;
     font-family: "GmarketSansMedium";
   }
+  #intro span {
+    display: inline-block;
+  }
   #intro div {
     width: 400px;
     height: 400px;
@@ -61,6 +89,10 @@ a {
       rgba(255, 249, 232, 0.687),
       transparent
     );
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 0.5s;
   }
 
   header {
@@ -74,6 +106,7 @@ a {
     transform: translateX(-50%);
     font-family: "HancomSans-Light";
     box-shadow: rgba(37, 37, 37, 0.3) 0px 0px 1.2rem;
+    display: none;
   }
   header ul {
     display: flex;
@@ -101,7 +134,8 @@ a {
   #home {
     width: 100%;
     height: 100vh;
-    background-color: rgb(76, 70, 55);
+    color: rgb(255, 249, 232);
+    position: relative;
   }
   #home .lines {
     width: 100%;
@@ -120,48 +154,117 @@ a {
   #home .lineX li {
     width: 100%;
     height: 1px;
-    border-bottom: 5px dashed rgb(255, 249, 232);
+    border-bottom: 1px dashed rgb(255, 249, 232);
     position: absolute;
+    border-radius: 10px;
   }
   #home .lineX li:nth-child(1) {
-    top: 1rem;
+    top: 2%;
   }
   #home .lineX li:nth-child(2) {
-    top: 8rem;
+    top: 28%;
   }
   #home .lineX li:nth-child(3) {
     top: 50%;
     transform: translateY(-50%);
   }
   #home .lineX li:nth-child(4) {
-    bottom: 15rem;
+    bottom: 27%;
   }
   #home .lineX li:nth-child(5) {
-    bottom: 1rem;
+    bottom: 2%;
   }
   #home .lineY li {
     width: 1px;
     height: 100%;
-    border-left: 5px dashed rgb(255, 249, 232);
+    border-left: 1px dashed rgb(255, 249, 232);
     position: absolute;
   }
   #home .lineY li:nth-child(1) {
-    left: 1rem;
+    left: 5%;
   }
   #home .lineY li:nth-child(2) {
-    left: 15rem;
+    left: 27%;
   }
   #home .lineY li:nth-child(3) {
     left: 50%;
     transform: translateX(-50%);
   }
   #home .lineY li:nth-child(4) {
-    right: 15rem;
+    right: 27%;
   }
   #home .lineY li:nth-child(5) {
-    right: 1rem;
+    right: 5%;
   }
-
+  #home .wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    box-sizing: border-box;
+  }
+  #home .wrap .navi {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px dashed rgb(255, 249, 232);
+    justify-content: center;
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    font-family: "HancomSans-Light";
+  }
+  #home .wrap .navi li {
+    text-align: center;
+    width: 170px;
+    border-right: 1px dashed rgb(255, 249, 232);
+    background-color: rgb(76, 70, 55);
+  }
+  #home .wrap .navi li:first-child {
+    border-left: 1px solid rgb(255, 249, 232);
+  }
+  #home .wrap .navi li a {
+    display: block;
+    padding: 1rem 0rem;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+  #home .wrap .navi a:hover {
+    background-color: rgb(255, 249, 232);
+    color: rgb(76, 70, 55);
+  }
+  #home .wrap .title {
+    position: absolute;
+    top: 10rem;
+    left: 8rem;
+    font-family: "JalnanGothic";
+    font-size: 7rem;
+  }
+  #home .wrap .title .inner {
+    margin-top: 2rem;
+    margin-left: 15rem;
+  }
+  #home .wrap .text {
+    position: absolute;
+    top: 10rem;
+    right: 6rem;
+    font-size: 2rem;
+    text-align: right;
+  }
+  #home .wrap .text strong {
+    font-size: 3rem;
+  }
+  #home .wrap .imgWrap {
+    display: flex;
+    position: absolute;
+    bottom: 2rem;
+    right: 6rem;
+    gap: 2rem;
+  }
+  #home .wrap .imgWrap li {
+    width: 250px;
+    height: 250px;
+    border-radius: 3rem;
+    background-color: orange;
+  }
   #aboutMe {
     width: 100%;
     height: 100vh;
