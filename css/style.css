@@ -31,6 +31,7 @@
   font-style: normal;
 }
 
+/*basic*/
 * {
   margin: 0px;
   padding: 0px;
@@ -44,8 +45,22 @@ a {
 }
 body {
   font-family: "Pretendard-Regular";
+  cursor: none;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.en {
+  font-family: "JalnanGothic";
 }
 
+/*mouse icon*/
+.mouse {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  display: none;
+}
 @media (min-width: 1000px) {
   html,
   body {
@@ -92,7 +107,6 @@ body {
     position: absolute;
     top: 0px;
     left: 0px;
-    transition: 0.5s;
   }
 
   header {
@@ -131,16 +145,17 @@ body {
     background-color: rgb(37, 37, 37);
   }
 
+  /*home*/
   #home {
     width: 100%;
     height: 100vh;
     color: rgb(255, 249, 232);
     position: relative;
   }
+  /*home back lines*/
   #home .lines {
     width: 100%;
     height: 100%;
-    border: 5px solid red;
     box-sizing: border-box;
     position: relative;
   }
@@ -152,50 +167,116 @@ body {
     top: 0px;
   }
   #home .lineX li {
-    width: 100%;
+    width: 0px;
     height: 1px;
     border-bottom: 1px dashed rgb(255, 249, 232);
     position: absolute;
     border-radius: 10px;
+    left: 0px;
   }
   #home .lineX li:nth-child(1) {
     top: 2%;
+    animation: homeX2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.1s;
   }
   #home .lineX li:nth-child(2) {
     top: 28%;
+    animation: homeX1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
   }
   #home .lineX li:nth-child(3) {
     top: 50%;
     transform: translateY(-50%);
+    animation: homeX2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
   }
   #home .lineX li:nth-child(4) {
     bottom: 27%;
+    animation: homeX1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.3s;
   }
   #home .lineX li:nth-child(5) {
     bottom: 2%;
+    animation: homeX2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.8s;
+  }
+  @keyframes homeX1 {
+    0% {
+      left: 100%;
+    }
+    100% {
+      left: 0;
+      width: 100%;
+    }
+  }
+  @keyframes homeX2 {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
   }
   #home .lineY li {
     width: 1px;
-    height: 100%;
+    height: 0;
     border-left: 1px dashed rgb(255, 249, 232);
     position: absolute;
   }
   #home .lineY li:nth-child(1) {
     left: 5%;
+    animation: homeY2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
   }
   #home .lineY li:nth-child(2) {
     left: 27%;
+    animation: homeY1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.4s;
   }
   #home .lineY li:nth-child(3) {
     left: 50%;
     transform: translateX(-50%);
+    animation: homeY2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.8s;
   }
   #home .lineY li:nth-child(4) {
     right: 27%;
+    animation: homeY1 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.2s;
   }
   #home .lineY li:nth-child(5) {
     right: 5%;
+    animation: homeY2 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.6s;
   }
+  @keyframes homeY1 {
+    0% {
+      top: 100%;
+    }
+    100% {
+      top: 0;
+      height: 100%;
+    }
+  }
+  @keyframes homeY2 {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 100%;
+    }
+  }
+  /*home detail*/
   #home .wrap {
     position: absolute;
     width: 100%;
@@ -203,14 +284,19 @@ body {
     top: 0px;
     box-sizing: border-box;
   }
+  /*home navi*/
   #home .wrap .navi {
     width: 100%;
     display: flex;
     border-bottom: 1px dashed rgb(255, 249, 232);
     justify-content: center;
     font-size: 1.5rem;
-    padding-top: 1.5rem;
+    padding-top: 1.2rem;
     font-family: "HancomSans-Light";
+    opacity: 0;
+    animation: homeNavi 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.6s;
   }
   #home .wrap .navi li {
     text-align: center;
@@ -219,7 +305,7 @@ body {
     background-color: rgb(76, 70, 55);
   }
   #home .wrap .navi li:first-child {
-    border-left: 1px solid rgb(255, 249, 232);
+    border-left: 1px dashed rgb(255, 249, 232);
   }
   #home .wrap .navi li a {
     display: block;
@@ -231,31 +317,57 @@ body {
     background-color: rgb(255, 249, 232);
     color: rgb(76, 70, 55);
   }
+  @keyframes homeNavi {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /*home title*/
   #home .wrap .title {
     position: absolute;
-    top: 10rem;
-    left: 8rem;
-    font-family: "JalnanGothic";
+    top: 8rem;
+    left: 6rem;
     font-size: 7rem;
+    transform: translateX(-5rem);
+    opacity: 0;
+    animation: home_txt 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
   }
   #home .wrap .title .inner {
     margin-top: 2rem;
     margin-left: 15rem;
   }
+  /*home text*/
   #home .wrap .text {
     position: absolute;
-    top: 10rem;
+    top: 8rem;
     right: 6rem;
     font-size: 2rem;
     text-align: right;
+    transform: translateX(5rem);
+    opacity: 0;
+    animation: home_txt 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
   }
   #home .wrap .text strong {
     font-size: 3rem;
   }
+  @keyframes home_txt {
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  /*home image*/
   #home .wrap .imgWrap {
     display: flex;
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
     right: 6rem;
     gap: 2rem;
   }
@@ -263,8 +375,88 @@ body {
     width: 250px;
     height: 250px;
     border-radius: 3rem;
-    background-color: orange;
+    overflow: hidden;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(3rem);
   }
+  #home .wrap .imgWrap li:nth-child(1) {
+    animation: home_image 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+  }
+  #home .wrap .imgWrap li:nth-child(2) {
+    animation: home_image 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 6.5s;
+  }
+  #home .wrap .imgWrap li:nth-child(3) {
+    animation: home_image 2s linear;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+  }
+  #home .wrap .imgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  #home .wrap .imgWrap img:hover {
+    transform: scale(1.2);
+  }
+  @keyframes home_image {
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  /*home mov circle*/
+  #home .movWrap {
+    border: 1px dashed rgb(255, 249, 232);
+    position: absolute;
+    bottom: 5rem;
+    left: 15rem;
+    width: 25px;
+    height: 55px;
+    border-radius: 25px;
+    opacity: 0;
+    animation: home_wrap 3s infinite linear;
+    animation-delay: 6.6s;
+  }
+  .movWrap div {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 249, 232);
+    margin: 0px auto;
+    border-radius: 50%;
+    margin-top: 5px;
+    animation: home_circle 2s infinite linear;
+  }
+  @keyframes home_wrap {
+    0% {
+      opacity: 0.5;
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(50px);
+      opacity: 1;
+    }
+  }
+  @keyframes home_circle {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 0;
+    }
+  }
+
   #aboutMe {
     width: 100%;
     height: 100vh;
@@ -296,8 +488,44 @@ body {
   }
 
   #contact {
+    color: rgb(255, 249, 232);
     width: 100%;
     height: 100vh;
-    background-color: rgb(76, 70, 55);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  #contact .detail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  #contact .detail > div,
+  #contact .detail > ul {
+    border-top: 1px dashed rgb(255, 249, 232);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #contact .detail .title {
+    top: 40%;
+    font-size: 3rem;
+    width: 100%;
+  }
+  #contact .detail .text {
+    top: 60%;
+    gap: 1rem;
+    display: flex;
+    font-size: 1.2rem;
+  }
+  #contact .detail .text li:last-child {
+    text-align: left;
+  }
+  #contact .detail .ex {
+    bottom: 10%;
+    display: flex;
+    gap: 1rem;
+  }
+  #contact .detail .make {
+    bottom: 0%;
   }
 }
