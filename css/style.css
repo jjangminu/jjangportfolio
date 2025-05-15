@@ -493,6 +493,7 @@ body {
     height: 100vh;
     box-sizing: border-box;
     text-align: center;
+    position: relative;
   }
   #contact .detail {
     position: relative;
@@ -501,7 +502,6 @@ body {
   }
   #contact .detail > div,
   #contact .detail > ul {
-    border-top: 1px dashed rgb(255, 249, 232);
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -513,12 +513,30 @@ body {
   }
   #contact .detail .text {
     top: 60%;
-    gap: 1rem;
     display: flex;
     font-size: 1.2rem;
+    width: 90%;
+    line-height: 1.5;
+  }
+  #contact .detail .text li {
+    width: calc(100% / 2);
+    padding: 2rem;
+    box-sizing: border-box;
   }
   #contact .detail .text li:last-child {
     text-align: left;
+  }
+  #contact .detail .text b {
+    font-size: 2rem;
+  }
+  #contact .detail .text h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  #contact .detail .text span {
+    font-style: italic;
+    margin-left: 5rem;
+    margin-right: 1rem;
   }
   #contact .detail .ex {
     bottom: 10%;
@@ -526,6 +544,53 @@ body {
     gap: 1rem;
   }
   #contact .detail .make {
-    bottom: 0%;
+    bottom: -5px;
+  }
+  /*contact line*/
+  #contact .lineWrap {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #contact .lineX,
+  #contact .lineY {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #contact .lineX li {
+    border-bottom: 1px dashed rgb(255, 249, 232);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+  }
+  #contact .lineX li:nth-child(1) {
+    top: 4%;
+  }
+  #contact .lineX li:nth-child(2) {
+    top: 50%;
+  }
+  #contact .lineX li:nth-child(3) {
+    bottom: 15%;
+  }
+  #contact .lineX li:nth-child(4) {
+    bottom: 4%;
+  }
+
+  #contact .lineY li {
+    border-left: 1px dashed rgb(255, 249, 232);
+    width: 1px;
+    height: 100%;
+    position: absolute;
+  }
+  #contact .lineY li:nth-child(1) {
+    left: 2%;
+  }
+  #contact .lineY li:nth-child(2) {
+    right: 2%;
   }
 }
