@@ -507,12 +507,12 @@ body {
     transform: translate(-50%, -50%);
   }
   #contact .detail .title {
-    top: 40%;
-    font-size: 3rem;
+    top: 49%;
+    font-size: 3.5rem;
     width: 100%;
   }
   #contact .detail .text {
-    top: 60%;
+    top: 70%;
     display: flex;
     font-size: 1.2rem;
     width: 90%;
@@ -520,26 +520,42 @@ body {
   }
   #contact .detail .text li {
     width: calc(100% / 2);
-    padding: 2rem;
+    padding: 2.9rem;
     box-sizing: border-box;
   }
   #contact .detail .text li:last-child {
+    border-left: 1px dashed rgb(255, 249, 232);
     text-align: left;
   }
   #contact .detail .text b {
     font-size: 2rem;
   }
   #contact .detail .text h3 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin-bottom: 1rem;
   }
   #contact .detail .text span {
     font-style: italic;
-    margin-left: 5rem;
+    margin-left: 15rem;
     margin-right: 1rem;
+    font-size: 1.5rem;
   }
   #contact .detail .ex {
-    bottom: 10%;
+    bottom: 4%;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  #contact .detail .ex > p {
+    font-size: 1.5rem;
+  }
+  #contact .detail .ex ul p {
+    font-size: 0.8rem;
+  }
+  #contact .detail .ex i {
+    font-size: 2rem;
+  }
+  #contact .detail .ex ul {
     display: flex;
     gap: 1rem;
   }
@@ -572,7 +588,7 @@ body {
     top: 4%;
   }
   #contact .lineX li:nth-child(2) {
-    top: 50%;
+    top: 55%;
   }
   #contact .lineX li:nth-child(3) {
     bottom: 15%;
@@ -580,7 +596,6 @@ body {
   #contact .lineX li:nth-child(4) {
     bottom: 4%;
   }
-
   #contact .lineY li {
     border-left: 1px dashed rgb(255, 249, 232);
     width: 1px;
